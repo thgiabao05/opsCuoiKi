@@ -1,0 +1,25 @@
+name: Deploy Project 1 (PHP) to Somee
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'Project1_PHP/**' # Chỉ chạy khi sửa code trong folder này
+
+jobs:
+  deploy-php:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Lấy code mới nhất
+        uses: actions/checkout@v3
+
+      - name: 📂 Upload file qua FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Folder chứa code ở máy mình
+          local-dir: ./Project1_PHP/
+          # Folder trên Server (QUAN TRỌNG: Vào Somee File Manager xem đúng đường dẫn)
+          server-dir: /www.ten-web-cua-ban.somee.com/
