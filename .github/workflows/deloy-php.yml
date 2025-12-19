@@ -22,4 +22,4 @@ jobs:
           # Folder chứa code ở máy mình
           local-dir: ./Project1_PHP/
           # Folder trên Server (QUAN TRỌNG: Vào Somee File Manager xem đúng đường dẫn)
-          server-dir: ./www.ossgiabao.somee.com/
+          server-dir: /
