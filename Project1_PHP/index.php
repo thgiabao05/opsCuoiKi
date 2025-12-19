@@ -49,7 +49,7 @@ $products = [
 </head>
 <body>
     <div class="container">
-        <h1>📦 PROJECT 1: PHP + MYSQL</h1>
+        <h1>📦 PROJECt 1: PHP + MYSQL</h1>
         <div class="status">
             Trạng thái DB: <b><?php echo $status_icon . " " . $status_msg; ?></b>
         </div>
